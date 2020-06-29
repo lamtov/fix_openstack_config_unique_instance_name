@@ -1,0 +1,13 @@
+note.txt
+
+### tren cac con controller
+docker cp conductor/    nova-conductor:/usr/lib/python2.7/dist-packages/nova/
+docker cp db/    nova-conductor:/usr/lib/python2.7/dist-packages/nova/
+docker restart nova-conductor
+
+
+
+### tren cac con compute
+docker cp  compute/   /usr/lib/python2.7/site-packages/nova/
+docker cp  virt/				/usr/lib/python2.7/site-packages/nova/
+systemctl restart openstack-nova-compute
